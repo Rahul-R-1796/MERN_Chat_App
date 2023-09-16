@@ -12,18 +12,21 @@
     "react-scroll-to-bottom": "^4.1.2",
     "socket.io-client": "^4.1.3",
     "web-vitals": "^1.0.1"
+    // Add more dependencies as needed
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    // Add custom scripts here if necessary
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    // Add custom ESLint rules or plugins here if needed
   },
   "browserslist": {
     "production": [
@@ -36,5 +39,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+    // Adjust the browser support list as required
   }
 }
