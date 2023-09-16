@@ -1,3 +1,4 @@
+// Chat.js
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 
@@ -11,10 +12,7 @@ function Chat({ socket, username, room }) {
         room: room,
         author: username,
         message: currentMessage,
-        time:
-          new Date(Date.now()).getHours() +
-          ":" +
-          new Date(Date.now()).getMinutes(),
+        time: new Date().toLocaleTimeString(),
       };
 
       await socket.emit("send_message", messageData);
@@ -27,7 +25,14 @@ function Chat({ socket, username, room }) {
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
     });
+
+    // Clean up the socket event listener when the component unmounts
+    return () => {
+      socket.off("receive_message");
+    };
   }, [socket]);
+
+
 
   return (
     <div className="chat-window">
