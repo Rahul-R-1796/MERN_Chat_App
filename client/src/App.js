@@ -1,9 +1,10 @@
-import "./App.css";
+// App.js
+import React, { useState } from "react";
 import io from "socket.io-client";
-import { useState } from "react";
+import "./App.css";
 import Chat from "./Chat";
 
-const socket = io.connect("http://localhost:3001");
+const socket = io("http://localhost:3001");
 
 function App() {
   const [username, setUsername] = useState("");
